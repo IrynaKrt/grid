@@ -5,6 +5,16 @@
   --overlay: rgba(0, 0, 0, 0.5);
 }
 
+@font-face {
+    font-family: "ABChanel Corpo Light";
+    src: url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.eot");
+    src: url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/08d38d30f8748388c11592e40dd0ad68.svg#ABChanel Corpo Light")format("svg");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +22,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "ABChanel Corpo Light", sans-serif;
 }
 
 .container {
@@ -198,7 +208,7 @@ body {
 .breadcrumbs {
   font-size: 0.85rem;
   margin: 1rem auto;
-  padding: 0 1rem;
+  padding: 50px 0 0 ;
   color: #555;
 }
 .breadcrumbs a {
@@ -212,7 +222,7 @@ body {
 
 /* Грид карточек */
 .portfolio-grid {
-  padding: 1rem;
+  padding: 100px 0;
 }
 .grid {
   display: grid;
@@ -282,7 +292,7 @@ body {
 
 .grid_mosaic {
   display: grid;
-  gap: 15px;
+  gap: 20px;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-flow: dense;
 }
@@ -291,6 +301,7 @@ body {
 @media (min-width: 600px) {
   .grid_mosaic {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
@@ -298,6 +309,7 @@ body {
 @media (min-width: 1024px) {
   .grid_mosaic {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
