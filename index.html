@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Портфолио</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="header-bg"></div>
+
+   <div class="container">
+  <div class="header-inner">
+    <button class="burger" aria-label="Открыть меню" onclick="toggleMenu()">☰</button>
+
+
+    <nav class="nav" id="navMenu">
+      <button class="close-menu" onclick="toggleMenu()">×</button>
+      <ul class="menu">
+        <li class="menu-item">
+          <button onclick="toggleItem(this)">О НАС</button>
+          <ul class="submenu">
+            <li><a href="#">ANT OF EVENTS GROUP</a></li>
+            <li><a href="#">КЛИЕНТЫ</a></li>
+            <li><a href="#">ГАРАНТИИ</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <button onclick="toggleItem(this)">УСЛУГИ</button>
+          <ul class="submenu">
+            <li><a href="#">Частные праздники</a></li>
+            <li><a href="#">Свадьбы</a></li>
+            <li><a href="#">Детские праздники</a></li>
+            <li><a href="#">Корпоративы</a></li>
+          </ul>
+        </li>
+        <li><a href="#">АРЕНДА</a></li>
+        <li><a href="#">МОБИЛЬНЫЕ ПЛОЩАДКИ</a></li>
+        <li><a href="#">АФИША</a></li>
+        <li><a href="#">ПОРТФОЛИО</a></li>
+        <li><a href="#">ВАШ DMC-ПАРТНЁР</a></li>
+        <li><a href="#">ПАРТНЁРЫ</a></li>
+      </ul>
+
+      <div class="menu-footer">
+        <p>+66 82 020 00 00</p>
+        <div class="socials">🌐 🟢 🔵</div>
+      </div>
+    </nav>
+
+    <div class="lang-location">
+      <a href="#">RU / EN</a>
+      <div class="country-selector">
+        <button onclick="toggleCountryMenu()">THAILAND ▼</button>
+        <ul id="countryMenu" class="country-menu">
+          <li><a href="#">Thailand</a></li>
+          <li><a href="#">Vietnam</a></li>
+          <li><a href="#">Indonesia</a></li>
+          <li><a href="#">Cambodia</a></li>
+          <li><a href="#">Malaysia</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-title">
+    <h1>ПОРТФОЛИО</h1>
+    <p>ФОТО И ВИДЕО ОТЧЁТЫ<br>ПО КАТЕГОРИЯМ МЕРОПРИЯТИЙ</p>
+  </div>
+  </div>
+</header>
+
+<!-- Хлебные крошки -->
+<nav class="breadcrumbs" aria-label="breadcrumb">
+    <div class="container">
+  <a href="#">Главная</a> /
+  <span>Портфолио</span>
+  </div>
+</nav>
+
+<!-- Секция карточек -->
+<section class="portfolio-grid">
+    <div class="container">
+  <div class="grid_mosaic">
+    <a href="#" class="card">
+      <img src="img/birthday.jpg" alt="День рождения">
+      <div class="card-overlay"><span>ДНИ РОЖДЕНИЯ</span></div>
+    </a>
+    <a href="#" class="card wide">
+      <img src="img/birthday.jpg" alt="День рождения">
+      <div class="card-overlay"><span>ДНИ РОЖДЕНИЯ</span></div>
+    </a>
+    <a href="#" class="card">
+      <img src="img/birthday.jpg" alt="День рождения">
+      <div class="card-overlay"><span>ДНИ РОЖДЕНИЯ</span></div>
+    </a>
+    <a href="#" class="card tall">
+      <img src="img/birthday.jpg" alt="День рождения">
+      <div class="card-overlay"><span>ДНИ РОЖДЕНИЯ</span></div>
+    </a>
+    <a href="#" class="card wide tall">
+      <img src="img/birthday.jpg" alt="День рождения">
+      <div class="card-overlay"><span>ДНИ РОЖДЕНИЯ</span></div>
+    </a>
+    </div>
+      </div>
+</section>
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('open');
+  }
+
+  function toggleItem(button) {
+    const item = button.closest('.menu-item');
+    const all = document.querySelectorAll('.menu-item');
+    all.forEach(i => {
+      if (i !== item) i.classList.remove('open');
+    });
+    item.classList.toggle('open');
+  }
+
+  function toggleCountryMenu() {
+    document.getElementById('countryMenu').classList.toggle('open');
+  }
+
+  // Закрытие страны при клике вне блока
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.country-selector')) {
+      document.getElementById('countryMenu')?.classList.remove('open');
+    }
+  });
+</script>
+
+</body>
+</html>
