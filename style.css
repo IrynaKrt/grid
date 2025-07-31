@@ -34,7 +34,7 @@ body {
 .header {
   position: relative;
   min-height: 400px;
-  padding: 1.5rem;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   color: var(--white);
@@ -83,6 +83,13 @@ body {
 .lang-location {
   text-align: right;
   font-size: 0.8rem;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.lang-location a {
+  color: var(--white);
+  text-decoration: none;
 }
 
 .header-title {
@@ -128,14 +135,16 @@ body {
 .menu > li {
   margin-bottom: 1rem;
 }
-.menu-item > button {
+.menu-item > div, .menu-item > li {
   background: none;
   border: none;
   color: var(--white);
-  font-size: 1rem;
+  font-size: 15px;
+  font-weight: 300;
   cursor: pointer;
   width: 100%;
   text-align: left;
+  text-transform: uppercase;
 }
 .submenu {
   display: none;
@@ -169,7 +178,10 @@ body {
   margin-top: 0.5rem;
 }
 
-.country-selector button {
+.country-selector div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   background: none;
   border: none;
   color: white;
@@ -193,6 +205,7 @@ body {
 
 .country-menu li {
   margin-bottom: 0.4rem;
+  list-style: none;
 }
 
 .country-menu a {
@@ -208,11 +221,12 @@ body {
 .breadcrumbs {
   font-size: 0.85rem;
   margin: 1rem auto;
-  padding: 50px 0 0 ;
+  padding: 25px 0 0 ;
   color: #555;
 }
 .breadcrumbs a {
   text-decoration: none;
+  text-transform: none;
   color: #555;
 }
 .breadcrumbs span {
@@ -220,18 +234,42 @@ body {
   font-weight: 600;
 }
 
-/* Грид карточек */
-.portfolio-grid {
-  padding: 100px 0;
-}
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+@media (min-width: 769px) {
+  .breadcrumbs {
+    padding: 35px 0 0 ;
+  }
 }
 
+
+@media (min-width: 1024px) {
+  .breadcrumbs {
+    padding: 50px 0 0 ;
+  }
+}
 /* Desktop layout */
 @media (min-width: 1024px) {
+
+  .header {
+    position: relative;
+    min-height: 400px;
+    padding: 30px 0 145px;
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .header-title h1 {
+    font-size: 55px;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .header-title p {
+    font-size: 30px;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
   .burger, .close-menu {
     display: none;
   }
@@ -245,8 +283,8 @@ body {
 
   .nav ul.menu {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: start;
+    gap: 20px;
     flex-wrap: wrap;
   }
 
@@ -275,52 +313,59 @@ body {
   .menu-footer {
     display: none;
   }
-}
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  .lang-location {
+    flex-direction: column;
+    gap: 25px;
   }
 }
 
-/* 2 колонки — от ~480px */
-@media (min-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
+
+/* Грид карточек */
+.portfolio-grid {
+  padding: 55px 0;
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    padding: 100px 0;
   }
 }
 
 .grid_mosaic {
   display: grid;
-  gap: 20px;
+  gap: 40px;
+  width: 100%;
   grid-template-columns: repeat(1, 1fr);
-  grid-auto-flow: dense;
+  grid-auto-rows: 50vw;
+  /* grid-auto-flow: dense; */
 }
 
-/* Планшет: 2 колонки */
 @media (min-width: 600px) {
   .grid_mosaic {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
   }
 }
 
-/* Десктоп: 3 колонки */
 @media (min-width: 1024px) {
   .grid_mosaic {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 7vw; /* Автостроки приближаются к квадратам */
   }
 }
 
+/* Карточки */
 .card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
   width: 100%;
-  height: 250px; /* фиксированная высота для мобилки и планшета */
-  display: block;
+  height: 100%;
   background-color: #ccc;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .card img {
@@ -331,6 +376,7 @@ body {
   transition: transform 0.3s ease;
 }
 
+/* Текстовая маска снизу */
 .card-overlay {
   position: absolute;
   bottom: 0;
@@ -345,23 +391,21 @@ body {
   border-radius: 0 0 12px 12px;
 }
 
-/* Мозаика (по желанию, если хочешь большего разнообразия) */
-.card.wide {
-  grid-column: span 2;
-}
-.card.tall {
-  grid-row: span 2;
-  height: 500px; /* на десктопе можно сделать выше */
-}
-
-@media (max-width: 1023px) {
-  /* Убираем мозаичность на мобилке и планшете — фиксированный размер */
-  .card.wide,
-  .card.tall {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-    height: 250px !important;
-  }
+/* Размеры карточек на десктопе */
+@media (min-width: 1024px) {
+  .card:nth-child(1)  { grid-column: span 4; grid-row: span 3; }
+  .card:nth-child(2)  { grid-column: span 3; grid-row: span 3; }
+  .card:nth-child(3)  { grid-column: span 3; grid-row: span 2; }
+  .card:nth-child(4)  { grid-column: span 4; grid-row: span 3; }
+  .card:nth-child(5)  { grid-column: span 3; grid-row: span 4; }
+  .card:nth-child(6)  { grid-column: span 3; grid-row: span 4; }
+  .card:nth-child(7)  { grid-column: span 4; grid-row: span 3; }
+  .card:nth-child(8)  { grid-column: span 3; grid-row: span 2; }
+  .card:nth-child(9)  { grid-column: span 3; grid-row: span 2; }
+  .card:nth-child(10) { grid-column: span 3; grid-row: span 3; }
+  .card:nth-child(11) { grid-column: span 4; grid-row: span 3; }
+  .card:nth-child(12) { grid-column: span 3; grid-row: span 2; }
+   .card:nth-child(13) { grid-column: span 3; grid-row: span 2; }
 }
 
 
@@ -370,5 +414,21 @@ body {
   .card:hover img {
     transform: scale(1.05);
   }
+}
+
+
+.arrow {
+  display: flex;
+  width: 10px;
+  height: 5px;
+  background: url('/images/icons/arrow.svg') center/cover no-repeat;
+}
+
+.close {
+  background: url('/images/icons/close.svg') center/cover no-repeat;
+}
+
+.burger {
+  background: url('/images/icons/burger\ menu.svg') center/cover no-repeat;
 }
 
