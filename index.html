@@ -1,178 +1,301 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Портфолио</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <header class="header">
-  <div class="header-bg"></div>
+    <div class="header-bg"></div>
 
-   <div class="container">
-    <div class="header-inner">
-      <button class="burger" aria-label="Открыть меню" onclick="toggleMenu()"><span class="burger"></span></button>
+    <div class="container">
+        <div class="header-inner">
+            <button class="burger" aria-label="Открыть меню" onclick="toggleMenu()"></button>
+            <nav class="nav" id="navMenu">
+                <button class="close-menu" aria-label="Закрыть меню" onclick="toggleMenu()"></button>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <div class="menu-header-toggle" onclick="toggleItem(this)">
+                            О НАС
+                            <span class="accordion-arrow"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#">ANT OF EVENTS GROUP</a></li>
+                            <li><a href="#">КЛИЕНТЫ</a></li>
+                            <li><a href="#">ГАРАНТИИ</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-header-toggle" onclick="toggleItem(this)">
+                            УСЛУГИ
+                            <span class="accordion-arrow"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li class="nested-menu-item">
+                                <div class="nested-menu-header-toggle" onclick="toggleItem(this, true)">
+                                    Частные праздники
+                                    <span class="accordion-arrow nested-arrow"></span>
+                                </div>
+                                <ul class="nested-submenu">
+                                    <li><a href="#">Дни рождения</a></li>
+                                    <li><a href="#">Свадьбы</a></li>
+                                    <li><a href="#">Детские праздники</a></li>
+                                    <li><a href="#">Корпоративы</a></li>
+                                </ul>
+                            </li>
+                            <li class="nested-menu-item">
+                                <div class="nested-menu-header-toggle" onclick="toggleItem(this, true)">
+                                    БИЗНЕСУ / MICE
+                                    <span class="accordion-arrow nested-arrow"></span>
+                                </div>
+                                <ul class="nested-submenu">
+                                    <li><a href="#">КОРПОРАТИВНЫЕ МЕРОПРИЯТИЯ</a></li>
+                                    <li><a href="#">ТИМБИЛДИНГИ</a></li>
+                                    <li><a href="#">КОНФЕРЕНЦИИ</a></li>
+                                    <li><a href="#">ПРЕЗЕНТАЦИИ И ОТКРЫТИЯ</a></li>
+                                    <li><a href="#">БРЕНДИРОВАННЫЕ МЕРОПРИЯТИЯ</a></li>
+                                </ul>
+                            </li>
+                            <li class="nested-menu-item">
+                                <div class="nested-menu-header-toggle" onclick="toggleItem(this, true)">
+                                    ЛИЧНАЯ ОХРАНА
+                                    <span class="accordion-arrow nested-arrow"></span>
+                                </div>
+                                <ul class="nested-submenu">
+                                    <li><a href="#">И ОХРАНА МЕРОПРИЯТИЙ</a></li>
+                                </ul>
+                            </li>
+                            <li class="nested-menu-item">
+                                <div class="nested-menu-header-toggle" onclick="toggleItem(this, true)">
+                                    ОРГАНИЗАТОРАМ /
+                                    <span class="accordion-arrow nested-arrow"></span>
+                                </div>
+                                <ul class="nested-submenu">
+                                    <li><a href="#">ПРОМОУТЕРАМ</a></li>
+                                    <li><a href="#">ОБЕСПЕЧЕНИЕ БЫТОВЫХ</a></li>
+                                    <li><a href="#">И ТЕХНИЧЕСКИХ РАЙДЕРОВ</a></li>
+                                    <li><a href="#">ПОДБОР ПЛОЩАДОК</a></li>
+                                    <li><a href="#">ДЛЯ КОНЦЕРТОВ</a></li>
+                                </ul>
+                            </li>
+                            <li class="nested-menu-item">
+                                <div class="nested-menu-header-toggle" onclick="toggleItem(this, true)">
+                                    ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ
+                                    <span class="accordion-arrow nested-arrow"></span>
+                                </div>
+                                <ul class="nested-submenu">
+                                    <li><a href="#">КЕЙТЕРИНГ</a></li>
+                                    <li><a href="#">ДЕКОР И ОФОРМЛЕНИЕ</a></li>
+                                    <li><a href="#">АРТИСТЫ И ШОУ-ПРОГРАММА</a></li>
+                                    <li><a href="#">БУКИНГ ЗВЕЗД</a></li>
+                                    <li><a href="#">ВЕДУЩИЕ И АНИМАТОРЫ</a></li>
+                                    <li><a href="#">ФОТО И ВИДЕОСЪЁМКА</a></li>
+                                    <li><a href="#">ИЗГОТОВЛЕНИЕ ФОТОЗОН</a></li>
+                                    <li><a href="#">ИЗГОТОВЛЕНИЕ РЕКЛАМНЫХ</a></li>
+                                    <li><a href="#">СТЕНДОВ</a></li>
+                                    <li><a href="#">ТРАНСПОРТ И ЛОГИСТИКА</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-header-toggle" onclick="toggleItem(this)">
+                            АРЕНДА
+                            <span class="accordion-arrow"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#">Подпункт Аренда 1</a></li>
+                            <li><a href="#">Подпункт Аренда 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#">МОБИЛЬНЫЕ ПЛОЩАДКИ</a></li>
+                    <li class="menu-item">
+                        <div class="menu-header-toggle" onclick="toggleItem(this)">
+                            АФИША
+                            <span class="accordion-arrow"></span>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#">Подпункт Афиша 1</a></li>
+                            <li><a href="#">Подпункт Афиша 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item active">
+                        <div class="menu-header-toggle" onclick="toggleItem(this)">
+                            ПОРТФОЛИО
+                            <span class="accordion-arrow"></span>
+                        </div>
+                        <ul class="submenu">
+                             <li><a href="#">image web for video screen</a></li>
+                             <li><a href="#">порт</a></li>
+                             <li><a href="#">Главная и Промотелью</a></li>
+                             <li><a href="#">О нас</a></li>
+                             <li><a href="#">Дни рождения</a></li>
+                             <li><a href="#">text and button</a></li>
+                             <li><a href="#">image</a></li>
+                             <li><a href="#">Создаём</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#">ВАШ DMC-ПАРТНЁР</a></li>
+                    <li class="menu-item"><a href="#">КОНТАКТЫ</a></li>
+                </ul>
 
+                <div class="menu-footer">
+                    <a class="phone-number" href="tel:66820200000"><img src="/images/icons/phone.svg" alt="phone"> +66 82 020 00 00</a>
+                    <div class="socials">
+                        <a href="#"><img src="/images/icons/facebook.svg" alt="fb"></a>
+                        <a href="#"><img src="/images/icons/instagram.svg" alt="inst"></a>
+                        <a href="#"><img src="/images/icons/telegram.svg" alt="tg"></a>
+                        <a href="#"><img src="/images/icons/whatsapp.svg" alt="wa"></a>
+                    </div>
+                </div>
+            </nav>
 
-      <nav class="nav" id="navMenu">
-        <button class="close-menu" onclick="toggleMenu()"><span class="close"></span></button>
-        <ul class="menu">
-          <li class="menu-item">
-            <div onclick="toggleItem(this)">О НАС</div>
-            <ul class="submenu">
-              <li><a href="#">ANT OF EVENTS GROUP</a></li>
-              <li><a href="#">КЛИЕНТЫ</a></li>
-              <li><a href="#">ГАРАНТИИ</a></li>
-            </ul>
-          </li>
-          <li class="menu-item">
-            <div onclick="toggleItem(this)">УСЛУГИ</div>
-            <ul class="submenu">
-              <li><a href="#">Частные праздники</a></li>
-              <li><a href="#">Свадьбы</a></li>
-              <li><a href="#">Детские праздники</a></li>
-              <li><a href="#">Корпоративы</a></li>
-            </ul>
-          </li>
-          <li><a href="#">АРЕНДА</a></li>
-          <li><a href="#">МОБИЛЬНЫЕ ПЛОЩАДКИ</a></li>
-          <li><a href="#">АФИША</a></li>
-          <li class="active"><a href="#">ПОРТФОЛИО</a></li>
-          <li><a href="#">ВАШ DMC-ПАРТНЁР</a></li>
-          <li><a href="#">КОНТАКТЫ</a></li>
-        </ul>
-
-        <div class="menu-footer">
-          <p>+66 82 020 00 00</p>
-          <div class="socials">🌐 🟢 🔵</div>
+            <div class="lang-location">
+                <a href="#"><span class="active">RU </span>/ <span>EN</span></a>
+                <div class="country-selector">
+                    <div onclick="toggleCountryMenu()">Thailand <span id="arrow" class="arrow"></span></div>
+                    <ul id="countryMenu" class="country-menu">
+                        <li><a href="#">Vietnam</a></li>
+                        <li><a href="#">Indonesia</a></li>
+                        <li><a href="#">Cambodia</a></li>
+                        <li><a href="#">Malaysia</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </nav>
 
-      <div class="lang-location">
-        <a href="#">RU / EN</a>
-        <div class="country-selector">
-          <div onclick="toggleCountryMenu()">Thailand <span id="arrow" class="arrow"></span></div>
-          <ul id="countryMenu" class="country-menu">
-            <li><a href="#">Vietnam</a></li>
-            <li><a href="#">Indonesia</a></li>
-            <li><a href="#">Cambodia</a></li>
-            <li><a href="#">Malaysia</a></li>
-          </ul>
+        <div class="header-title">
+            <h1>ПОРТФОЛИО</h1>
+            <p>ФОТО И ВИДЕО ОТЧЁТЫ<br>ПО КАТЕГОРИЯМ МЕРОПРИЯТИЙ</p>
         </div>
-      </div>
     </div>
-
-    <div class="header-title">
-      <h1>ПОРТФОЛИО</h1>
-      <p>ФОТО И ВИДЕО ОТЧЁТЫ<br>ПО КАТЕГОРИЯМ МЕРОПРИЯТИЙ</p>
-    </div>
-  </div>
 </header>
 
-<!-- Хлебные крошки -->
 <nav class="breadcrumbs" aria-label="breadcrumb">
     <div class="container">
-      <a href="#">Главная</a> >
-      <span>Портфолио</span>
+        <a href="#">Главная</a> >
+        <span>Портфолио</span>
     </div>
 </nav>
 
-<!-- Секция карточек -->
 <section class="portfolio-grid">
     <div class="container">
-      <div class="grid_mosaic">
-        <a href="#" class="card">
-          <img src="images/1.png" alt="День рождения">
-          <div class="card-overlay"><span>дни рождения</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/2.jpg" alt="вечиринки">
-          <div class="card-overlay"><span>вечиринки</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/3.jpg" alt="свадьбы">
-          <div class="card-overlay"><span>свадьбы</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/4.jpg" alt="концерты">
-          <div class="card-overlay"><span>концерты</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/5.png" alt="корпоративные мероприятия">
-          <div class="card-overlay"><span>корпоративные мероприятия</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/6.jpg" alt="детские праздники">
-          <div class="card-overlay"><span>детские праздники</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/7.jpg" alt="тимбилдинги">
-          <div class="card-overlay"><span>тимбилдинги</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/8.jpg" alt="театр">
-          <div class="card-overlay"><span>театр</span></div>
-        </a>
-          <a href="#" class="card">
-            <img src="images/9.jpg" alt="гендерпати">
-            <div class="card-overlay"><span>гендерпати</span></div>
-          </a>
-        <a href="#" class="card">
-          <img src="images/11.jpg" alt="открытие магазина">
-          <div class="card-overlay"><span>открытие магазина</span></div>
-        </a>
-        <a href="#" class="card">
-          <img src="images/12.jpg" alt="презентации">
-          <div class="card-overlay"><span>презентации</span></div>
-        </a>
-        <a href="#" class="card">
-            <img src="images/10.png" alt="прогулки на яхте">
-            <div class="card-overlay"><span>прогулки на яхте</span></div>
-          </a>
-        <a href="#" class="card">
-          <img src="images/13.jpg" alt="конференции">
-          <div class="card-overlay"><span>конференции</span></div>
-        </a>
-      </div>
+        <div class="grid_mosaic">
+            <a href="#" class="card">
+                <img src="images/1.png" alt="День рождения">
+                <div class="card-overlay"><span>дни рождения</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/2.jpg" alt="вечиринки">
+                <div class="card-overlay"><span>вечиринки</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/3.jpg" alt="свадьбы">
+                <div class="card-overlay"><span>свадьбы</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/4.jpg" alt="концерты">
+                <div class="card-overlay"><span>концерты</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/5.png" alt="корпоративные мероприятия">
+                <div class="card-overlay"><span>корпоративные мероприятия</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/6.jpg" alt="детские праздники">
+                <div class="card-overlay"><span>детские праздники</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/7.jpg" alt="тимбилдинги">
+                <div class="card-overlay"><span>тимбилдинги</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/9.jpg" alt="гендерпати">
+                <div class="card-overlay"><span>гендерпати</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/8.jpg" alt="театр">
+                <div class="card-overlay"><span>театр</span></div>
+            </a>
+            <a href="#ы" class="card">
+                <img src="images/10.png" alt="прогулки на яхте">
+                <div class="card-overlay"><span>прогулки на яхте</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/11.jpg" alt="открытие магазина">
+                <div class="card-overlay"><span>открытие магазина</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/12.jpg" alt="презентации">
+                <div class="card-overlay"><span>презентации</span></div>
+            </a>
+            <a href="#" class="card">
+                <img src="images/13.jpg" alt="конференции">
+                <div class="card-overlay"><span>конференции</span></div>
+            </a>
+        </div>
     </div>
 </section>
 
-
 <script>
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('open');
-  }
+    function toggleMenu() {
+        document.getElementById('navMenu').classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+    }
 
-  function toggleItem(button) {
-    const item = button.closest('.menu-item');
-    const all = document.querySelectorAll('.menu-item');
-    all.forEach(i => {
-      if (i !== item) i.classList.remove('open');
+    function toggleItem(clickedElement, isNested = false) {
+        const item = clickedElement.closest(isNested ? '.nested-menu-item' : '.menu-item');
+        const allItems = document.querySelectorAll(isNested ? '.nested-menu-item' : '.menu-item');
+
+        allItems.forEach(i => {
+            if (i !== item && i.classList.contains('open')) {
+                i.classList.remove('open');
+                if (!isNested && i.querySelectorAll('.nested-menu-item.open').length > 0) {
+                    i.querySelectorAll('.nested-menu-item.open').forEach(nested => {
+                        nested.classList.remove('open');
+                    });
+                }
+            }
+        });
+        item.classList.toggle('open');
+    }
+
+    function toggleCountryMenu() {
+        const menu = document.getElementById('countryMenu');
+        const arrow = document.getElementById('arrow');
+
+        menu.classList.toggle('open');
+
+        if (menu.classList.contains('open')) {
+            arrow.style.transform = 'rotate(180deg)';
+        } else {
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    }
+
+    // Закрытие страны при клике вне блока
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.country-selector')) {
+            document.getElementById('countryMenu').classList.remove('open');
+            document.getElementById('arrow').style.transform = 'rotate(0d)';
+        }
     });
-    item.classList.toggle('open');
-  }
 
-  function toggleCountryMenu() {
-    const menu = document.getElementById('countryMenu');
-    const arrow = document.getElementById('arrow');
+    // Jбработчик для ссылок в меню
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(() => {
+                if (document.getElementById('navMenu').classList.contains('open')) {
+                    toggleMenu();
+                }
+            }, 100);
+        });
+    });
 
-    menu.classList.toggle('open');
-
-    if (menu.classList.contains('open')) {
-      arrow.style.transform = 'rotate(180deg)';
-    } else {
-      arrow.style.transform = 'rotate(0deg)';
-    }
-  }
-
-  // Закрытие страны при клике вне блока
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.country-selector')) {
-      document.getElementById('countryMenu')?.classList.remove('open');
-    }
-  });
 </script>
 
 </body>
