@@ -67,7 +67,7 @@ body.no-scroll::before {
 .header-bg {
     position: absolute;
     inset: 0;
-    background: url('../images/bg.png') center/cover no-repeat;
+    background: url('./images/bg.png') center/cover no-repeat;
     z-index: 0;
     overflow: hidden;
 }
@@ -93,7 +93,7 @@ body.no-scroll::before {
 /* Стили для бургер-иконки */
 .burger {
     font-size: 1.8rem;
-    background: url('../images/icons/burger menu.svg') center/contain no-repeat;
+    background: url('/grid/images/icons/burger menu.svg') center/contain no-repeat;
     border: none;
     color: var(--white);
     cursor: pointer;
@@ -366,7 +366,7 @@ body.no-scroll::before {
 
 /* Крестик закрытия */
 .close-menu {
-    background: url('../images/icons/close.svg') center/contain no-repeat;
+    background: url('/grid/images/icons/close.svg') center/contain no-repeat;
     border: none;
     cursor: pointer;
     width: 30px;
@@ -443,7 +443,7 @@ body.no-scroll::before {
     display: block;
     width: 10px;
     height: 5px;
-    background: url('../images/icons/arrow.svg') center/contain no-repeat;
+    background: url('/grid/images/icons/arrow.svg') center/contain no-repeat;
     transition: transform 0.3s ease;
 }
 
