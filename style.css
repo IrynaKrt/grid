@@ -546,10 +546,13 @@ body.no-scroll::before {
       margin-top: 0;
     }
 
-    .menu-item.active {
-      padding: 5px 10px;
-      background-color:rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
+    .menu-item.active > .menu-header-toggle,
+    .menu-item.active > a {
+        color: var(--menu-active-color);
+        font-weight: 300;
+        padding: 5px 10px;
+        background-color:rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
     }
 
     .menu > li {
